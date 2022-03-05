@@ -58,51 +58,82 @@ public void save(Book book) {
 
 		}
 
-	 public String update(String id, Book book) {
 
-			String response = "";
-			Optional<Book> bookFound = bookrepository.findById(id);
+	 public Book findBookByTitle(String title) {
+		 Book response;
+		 Optional<Book> bookFound = bookrepository.findByTitle(title);
+		if (bookFound.isPresent()) {
 
-			if (bookFound.isPresent()) {
+			
+			response = bookFound.get();
+		} else {
 
-				bookFound.get().setTitle(book.getTitle());
-				bookrepository.save(bookFound.get());
-				response += "book updated";
-
-			} else {
-				response += "book not found";
-			}
-
-			return response;
-
-		}
-	
-	// other options
-		public long count() {
-
-			long quantity = bookrepository.count();
-
-			return quantity;
+			response = null;
 		}
 
-		public boolean existsById(String id) {
+		return response;
+		
+		
+	  }
+	 
+	 public Book findByTitle2(String title) {
+		 Book response2;
+		 Optional<Book> bookFound2 = bookrepository.findByTitle(title);
+		if (bookFound2.isPresent()) {
 
-			boolean isBook = bookrepository.existsById(id);
+			
+			response2 = bookFound2.get();
+		} else {
 
-			return isBook;
+			response2 = null;
 		}
 
-		public Long countByLastname(String author) {
-
-			long quantity = bookrepository.countByAuthor(author);
-
-			return quantity;
-		}
-
-		public void deleteByLastname(String author) {
-
-			bookrepository.deleteByAuthor(author);
-
-		}
+		return response2;
+		
+		
+	  }
+	 
+	 
+	 
+		/*
+		 * public String update(String id, Book book) {
+		 * 
+		 * String response = ""; Optional<Book> bookFound = bookrepository.findById(id);
+		 * 
+		 * if (bookFound.isPresent()) {
+		 * 
+		 * bookFound.get().setTitle(book.getTitle());
+		 * bookrepository.save(bookFound.get()); response += "book updated";
+		 * 
+		 * } else { response += "book not found"; }
+		 * 
+		 * return response;
+		 * 
+		 * }
+		 * 
+		 * // other options public long count() {
+		 * 
+		 * long quantity = bookrepository.count();
+		 * 
+		 * return quantity; }
+		 * 
+		 * public boolean existsById(String id) {
+		 * 
+		 * boolean isBook = bookrepository.existsById(id);
+		 * 
+		 * return isBook; }
+		 * 
+		 * public Long countByLastname(String author) {
+		 * 
+		 * long quantity = bookrepository.countByAuthor(author);
+		 * 
+		 * return quantity; }
+		 * 
+		 * public void deleteByLastname(String author) {
+		 * 
+		 * bookrepository.deleteByAuthor(author);
+		 * 
+		 * }
+		 */
 	 
 }

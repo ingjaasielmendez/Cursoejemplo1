@@ -1,8 +1,8 @@
 package com.example.example1;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+/*import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;*/
 import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
@@ -10,8 +10,8 @@ import javax.validation.constraints.Size;
 public class Author {
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private int id;
+	/* @GeneratedValue (strategy = GenerationType.IDENTITY) */
+	private String id;
 	@Size(min=3,  max = 20)
 	public String name;
 	public String country;
@@ -22,7 +22,7 @@ public class Author {
 
 		public Author () {}	
 		
-		public Author(int id, String name, String country, int dob, int qtyBooks, Boolean alive) {
+		public Author(String id, String name, String country, int dob, int qtyBooks, Boolean alive) {
 			super();
 			this.id = id;
 			this.name = name;
@@ -34,10 +34,10 @@ public class Author {
 		
 		
 		
-		public int getId() {
+		public String getId() {
 			return id;
 		}
-		public void setId(int id) {
+		public void setId(String id) {
 			this.id = id;
 		}
 		public String getName() {

@@ -18,4 +18,13 @@ public interface BookRepository extends CrudRepository <Book, Integer>{
 
 	void deleteByAuthor(String author);
 
+
+
+	
+	
+	
+	
+	
+	
+
 }

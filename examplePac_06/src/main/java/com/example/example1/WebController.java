@@ -15,13 +15,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 	Authorservice authorservice;
 	@Autowired
 	BookRepository bookrepository;
+	@Autowired
+	AuthorRepository authorrepository;
 	
-	@RequestMapping("/web")public String getWeb (Model containerToView) {
+	@RequestMapping("/web")
+	
+	public String getWeb (Model containerToView) {
 		
 		containerToView.addAttribute("booksfromController", bookrepository.findAll());
-		  containerToView.addAttribute("AuthorfromController", authorservice.queryAuthor());
+		  containerToView.addAttribute("AuthorfromController", authorrepository.findAll());
 
-		System.out.println("Controller Web request ...");
+		System.out.println("Controller Web request  ...");
 			
 			return "web.html";
 		}
