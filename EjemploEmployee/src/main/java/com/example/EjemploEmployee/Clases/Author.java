@@ -1,4 +1,4 @@
-package com.example.EjemploEmployee;
+package com.example.EjemploEmployee.Clases;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

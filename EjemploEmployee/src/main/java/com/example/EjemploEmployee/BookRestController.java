@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.EjemploEmployee.Clases.Author;
+import com.example.EjemploEmployee.Clases.Book;
+import com.example.EjemploEmployee.Servs.AuthorService;
+import com.example.EjemploEmployee.Servs.BookService;
+
 @RestController
 @RequestMapping("apilibrary")
 public class BookRestController {

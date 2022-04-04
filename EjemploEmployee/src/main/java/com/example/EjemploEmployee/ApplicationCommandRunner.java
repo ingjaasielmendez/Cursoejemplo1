@@ -6,6 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import com.example.EjemploEmployee.Clases.Author;
+import com.example.EjemploEmployee.Clases.Book;
+import com.example.EjemploEmployee.Servs.AuthorService;
+import com.example.EjemploEmployee.Servs.BookService;
+
 @Component
 public class ApplicationCommandRunner implements CommandLineRunner {
 
