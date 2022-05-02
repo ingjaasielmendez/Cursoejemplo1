@@ -7,13 +7,17 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.example.Restaurante.Clases.Customer;
-import com.example.Restaurante.Repos.CustomerRepository;
+import com.example.Restaurante.Serv.CustomerService;
+
+
+
 
 
 @Component
 public class ApplicationCommandRunner implements CommandLineRunner {
-    @Autowired
-	CustomerRepository customerrepository;
+    
+	@Autowired
+	CustomerService customerservice;
 	
 protected final Log logger = LogFactory.getLog(getClass());
 	
@@ -23,9 +27,9 @@ protected final Log logger = LogFactory.getLog(getClass());
 	
 		logger.info("Welcome to the runner from commandLineRunner");
 		// Long id, String firstName, String lastName, String username, String password
-		Customer customer1 = new Customer((long) 1, "Toni", "Montana", "toni2", "$2a$12$p7soZI3kAFcxv7QFRFzNP.gjmhHrpDACSJpoTmJQnFFWD6u7IeXNe");
+		Customer customer1 = new Customer((long) 1, "Toni", "Montana", "toni3", "$2a$12$p7soZI3kAFcxv7QFRFzNP.gjmhHrpDACSJpoTmJQnFFWD6u7IeXNe");
 		
-		customerrepository.save(customer1);
+		customerservice.save(customer1);
 	
   }
 	
