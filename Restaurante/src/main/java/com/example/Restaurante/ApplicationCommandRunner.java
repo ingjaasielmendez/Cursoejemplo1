@@ -27,7 +27,7 @@ protected final Log logger = LogFactory.getLog(getClass());
 	
 		logger.info("Welcome to the runner from commandLineRunner");
 		// Long id, String firstName, String lastName, String username, String password
-		Customer customer1 = new Customer((long) 1, "Toni", "Montana", "toni3", "$2a$12$p7soZI3kAFcxv7QFRFzNP.gjmhHrpDACSJpoTmJQnFFWD6u7IeXNe");
+		Customer customer1 = new Customer((long) 1, "Admin", "Administrator", "admin", "$2a$12$p7soZI3kAFcxv7QFRFzNP.gjmhHrpDACSJpoTmJQnFFWD6u7IeXNe");
 		
 		customerservice.save(customer1);
 	
