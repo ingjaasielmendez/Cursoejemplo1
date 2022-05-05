@@ -102,9 +102,10 @@
 
 </head>
 <body>
-            <h1>Crea tu usuario</h1>
+            
     <div class="flex-wrap2">
        <fieldset>
+       
    <form action="#" th:action="@{/createuser}" th:object="${createuser}" method="post"> 
             <input type="radio" name="rg" id="sign-up" checked/>
             <input type="radio" name="rg" id="reset" />        
@@ -122,9 +123,11 @@
             <button type="submit" value="Submit"></button>  
         
     </form>
+   		 <p><a th:href=" @{/hello}" >login</a></p>
+         <p><a th:href=" @{/home}" >Home</a></p>
      </fieldset>
 </div> 
-      <p> Click here to <a th:href=" @{/hello}" >login</a > and ... going to Hello</p>
+      
     
 </body>
 </html>

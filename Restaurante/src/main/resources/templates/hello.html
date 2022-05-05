@@ -9,8 +9,10 @@
         <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
         <form th:action="@{/logout}" method="post">
             <input type="submit" value="Sign Out"/>
+            <a href="/createuser">Crear un usuario</a>
+        	<p><a th:href=" @{/home}" >Home</a></p>
         </form>
-        	    <a href="/createuser">Submit another message</a>
+        	    
         	
     
     </body>
