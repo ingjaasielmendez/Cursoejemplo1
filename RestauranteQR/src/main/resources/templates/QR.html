@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Web with ThymeLeaf creating a QR Code</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+    <h1>Generate QR Code</h1>
+    <form method="POST" class="w3-container w3-card-4 w3-light-grey" enctype="multipart/form-data" action="/showQR">
+        <h2>QR Spring Boot</h2>
+  		<p>We are using QR, Spring Boot and Thymeleaf</p>
+  		
+  		 <p>
+            <label for="qrText" >Enter your text to create a QR code</label>
+            <input type="text" class="w3-input w3-border w3-round" id="qrText" name="qrText" required>
+        <p>
+            <button type="submit" class="btn btn-primary">Create QR Code</button>
+        
+    </form>
+
+</body>
+</html>

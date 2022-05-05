@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Web with ThymeLeaf creating a QR Code</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<div class="w3-container">
+<h2>QR Content</h2>
+<p>QR created from text:</p>
+
+  <div class="w3-card-4" style="width:80%;">
+    <header class="w3-container w3-blue">
+      <h1>QR Image (.png)</h1>
+    </header>
+     <div class="w3-container">
+   
+    <br />
+     <a href="/" class="w3-button w3-border w3-hover-teal">Back to home</a>
+      <br /> <br />
+    <img th:src="${qrCodeText}" />
+     
+  </div>
+  <footer class="w3-container w3-sand">
+      <h5>Spring Jaume Viladoms</h5>
+      
+    </footer>
+</div>
+</div>
+</body>
+</html>

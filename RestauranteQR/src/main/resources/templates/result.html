@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Usuario Creado</h1>
+    <p th:text="'id: ' + ${customer.id}" />
+    <p th:text="'firstName: ' + ${customer.firstName}" />
+    <p th:text="'lastName: ' + ${customer.lastName}" />
+    <p th:text="'username: ' + ${customer.username}" />
+    <a href="/createuser">Submit another message</a>
+    <p> Click here to <a th:href=" @{/hello}" >login</a > and ... going to Hello</p>
+    
+</body>
+</html>
