@@ -1,4 +1,4 @@
-package com.example.Restaurante;
+package com.example.Restaurante.Serv;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

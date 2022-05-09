@@ -1,4 +1,4 @@
-package com.example.Restaurante;
+package com.example.Restaurante.Serv;
 
 public interface QRService {
 	

@@ -27,7 +27,7 @@ public class CustomerController {
 	@PostMapping(path ="/createuser")
 	  public String createSubmit(@ModelAttribute Customer customer, Model model) {
 	    model.addAttribute("createuser", customer);
-	    customer = customerservice.save(customer);
+	    customer = customerservice.check(customer);
 	    return "result";
 	    
 	  }

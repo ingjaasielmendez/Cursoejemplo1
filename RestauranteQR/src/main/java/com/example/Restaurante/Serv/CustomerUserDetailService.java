@@ -1,4 +1,4 @@
-package com.example.Restaurante;
+package com.example.Restaurante.Serv;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
@@ -14,11 +14,11 @@ import com.example.Restaurante.Repos.CustomerRepository;
 public class CustomerUserDetailService implements UserDetailsService  {
 	
 		@Autowired
-		private CustomerRepository customerRepository;
+		private CustomerRepository customerrepository;
 		
 		@Override
 		public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-			final Customer customer = customerRepository.findByUsername(username).get();
+			final Customer customer = customerrepository.findByUsername(username).get();
 	        if (customer == null) {
 	            throw new UsernameNotFoundException(username);
 	        }

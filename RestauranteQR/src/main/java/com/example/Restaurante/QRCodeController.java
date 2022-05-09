@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.Restaurante.Serv.QRService;
+
 @Controller
 public class QRCodeController {
 	
@@ -19,8 +21,8 @@ public class QRCodeController {
 	private  QRService qrService;
 	
 	@RequestMapping("/homeQR")
-	public String QR() {
-		return "QR";
+	public String index() {
+		return "index";
 	}
 	
 	
@@ -36,8 +38,9 @@ public class QRCodeController {
 	@GetMapping("/createQR")
 	public void createQR (String qrText, HttpServletResponse response) throws IOException {
 		
-		response.setContentType("image/png");
-        byte[] qrCode = qrService.generateQRCode(qrText, 700, 700);
+		 response.setContentType("image/png"); 
+		
+        byte[] qrCode = qrService.generateQRCode(qrText, 200, 200);
         OutputStream outputStream = response.getOutputStream();
         outputStream.write(qrCode);
 		
