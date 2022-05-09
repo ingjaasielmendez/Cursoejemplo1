@@ -28,7 +28,7 @@ public Customer save(Customer customer) {
 public Customer check(Customer customer) {
 
 	Optional<Customer> existing = customerrepository.findByUsername(customer.getUsername());
-    existing.ifPresent(it-> {throw new IllegalArgumentException("customer already exists: " + it.getUsername());});
+    existing.ifPresent(it-> {throw new IllegalArgumentException("error.html");});
 
     String hash = encoder.encode(customer.getPassword());
     customer.setPassword(hash);
