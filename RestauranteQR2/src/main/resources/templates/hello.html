@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Hello World!</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+            <a href="/createuser">Crear un usuario</a>
+        	<p><a th:href=" @{/home}" >Home</a></p>
+        </form>
+        <form th:action="@{/showQR}" method="post">
+        <input type="text" id="qrText" name="qrText" value="premio" required>
+            <input type="submit" class="btn btn-primary"/>
+            
+        </form>
+        	    
+        	
+    
+    </body>
+</html>
