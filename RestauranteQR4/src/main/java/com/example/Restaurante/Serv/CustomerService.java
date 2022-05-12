@@ -31,6 +31,8 @@ public Customer findByUsername(String username) {
 	
 }
 
+
+
 public Customer check(Customer customer) {
 
 	Optional<Customer> existing = customerrepository.findByUsername(customer.getUsername());

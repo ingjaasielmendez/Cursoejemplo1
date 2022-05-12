@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 	public class CustomerImgQR {
 		
 		@Id
-		private String id;
+		private Long id;
 		private String username;
 		private Binary image;
 		
@@ -22,7 +22,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 
-		public CustomerImgQR(String id, String username, Binary image) {
+		public CustomerImgQR(Long id, String username, Binary image) {
 			super();
 			this.id = id;
 			this.username = username;
@@ -31,13 +31,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 
-		public String getId() {
+		public Long getId() {
 			return id;
 		}
 
 
 
-		public void setId(String id) {
+		public void setId(Long id) {
 			this.id = id;
 		}
 
