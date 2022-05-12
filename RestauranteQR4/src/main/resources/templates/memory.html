@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" href="mesa.png" sizes="16x16">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Memory Game</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" href="img/mario/mushroom.png">
+    </head>
+    <body>
+        <div>
+            <div id="game"></div>
+            <div class="row">
+                <section class="grid">
+                    <div class="title label"><h3>Moves</h3></div>
+                    <div class="title label"><h3>Errors</h3></div>
+                    <div class="title label"><h3>Score</h3></div>
+                    <div id="moves">
+                        <div><p id="num1"></p></div>
+                    </div>
+                    <div id="errors">
+                        <div><p id="num2"></p></div>
+                    </div>
+                    <div id="score">
+                        <div><p id="num3"></p></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <form class="grid" th:action="@{/showQR}" method="post">
+            <div class="premio"><p id="qrText"></p></div>
+            <input type="submit">
+        </form>
+        <script src="script.js" type="text/javascript"></script>
+    </body>
+</html>

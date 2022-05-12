@@ -9,7 +9,6 @@ import org.bson.types.Binary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +18,6 @@ import com.example.Restaurante.Clases.Customer;
 import com.example.Restaurante.Clases.CustomerImgQR;
 import com.example.Restaurante.Repos.CustomerImagesRepository;
 import com.example.Restaurante.Serv.CustomerService;
-import com.example.Restaurante.Serv.CustomerServiceImg;
 import com.example.Restaurante.Serv.QRService;
 
 
