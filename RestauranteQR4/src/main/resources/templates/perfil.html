@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Web with ThymeLeaf creating a QR Code</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta charset="UTF-8">
+</head>
+<body>
+<div class="w3-container">
+
+  <div class="w3-card-4" style="width:100%;">
+    <header class="w3-container w3-teal">
+    <h2>Este es tu perfil de usuario</h2>
+      <h3>Código QR de tu premio</h3>
+    </header>
+    
+    <p th:text="'id: ' + ${customer.id}" />
+    <p th:text="'firstName: ' + ${customer.firstName}" />
+    <p th:text="'lastName: ' + ${customer.lastName}" />
+    <p th:text="'username: ' + ${customer.username}" />
+    
+     <div class="w3-container">
+   
+    <br />
+     <p th:text="'id: ' + ${customerimages.id}" />
+     <p th:text="'username: ' + ${customerimages.username}" />
+      <br /> <br />
+     
+    <img th:src="'image: ' + ${customerimages.image}" />
+     
+  </div>
+  <footer class="w3-container w3-teal">
+      <h5>Restaurant Viladoms</h5>
+      <p><a th:href=" @{/home}" >Home</a></p>
+      <a href="/createuser">Crear un usuario</a>
+    
+      
+    </footer>
+</div>
+</div>
+</body>
+</html>
