@@ -2,17 +2,24 @@ package com.example.Restaurante;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Optional;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.bson.types.Binary;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.Restaurante.Clases.Customer;
 import com.example.Restaurante.Clases.CustomerImgQR;
@@ -71,12 +78,24 @@ public class QRCodeController {
 	}
 	  
 	 
-	/*
-	 * @PostMapping(path = "/getCustomerImgQR") public String Mostrarperfil(Customer
-	 * customer, CustomerImgQR customerimages, Model model1, Model model2) {
-	 * model1.addAttribute("getCustomerImgQR", customer);
-	 * model2.addAttribute("getCustomerImgQR", customerimages);
-	 * 
-	 * return "perfil"; }
-	 */
+	
+	  @PostMapping("/perfil") 
+	  public Customer Mostrarperfil(@ModelAttribute String username, Model model) {
+		  Customer customer = customerservice.findByUsername(username);
+		  model.addAttribute("customer", customer);
+	      
+	  
+	  return customer; }
+	  
+	
+	  @GetMapping("/getImage")
+		public ResponseEntity<byte[]> getImage (@RequestParam String username) {
+			
+			Optional<CustomerImgQR> customerimages = customerimagesrepository.findByUsername(username);
+			HttpHeaders headers = new HttpHeaders();
+			headers.setContentType(MediaType.IMAGE_JPEG);
+			
+			return new ResponseEntity<>( customerimages.get().getImage().getData(), headers, HttpStatus.OK );
+		}
+	 
 }

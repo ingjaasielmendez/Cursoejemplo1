@@ -18,11 +18,8 @@ public class MvcConfig implements WebMvcConfigurer {
 		registry.addViewController("/memory").setViewName("memory.html");
 		registry.addViewController("/script.js").setViewName("script.js");
 		registry.addViewController("/style.css").setViewName("style.css");
-		/*
-		 * registry.addViewController("/homeQR").setViewName("homeQR");
-		 * registry.addViewController("/showQR").setViewName("showQR");
-		 * registry.addViewController("/createQR").setViewName("qrweb");
-		 */
+		registry.addViewController("/perfil").setViewName("perfil.html");
+		registry.addViewController("/getImage").setViewName("perfil.html");
 		registry.addViewController("/hello").setViewName("hello");
 		registry.addViewController("/login").setViewName("login.html");
 		registry.addViewController("/logout").setViewName("logout");
